@@ -1,0 +1,66 @@
+{
+  "name": "@denoplayground/template",
+  "version": "0.1.0",
+  "tasks": {
+    "run": {
+      "description": "Run the main application.",
+      "command": "deno run -A --check ./src/index.ts"
+    },
+    "run:watch": {
+      "description": "Run the main application in watch mode.",
+      "command": "deno run -A --check --watch ./src/index.ts"
+    },
+    "lint": {
+      "description": "Run the linting tool.",
+      "command": "deno lint"
+    },
+    "test": {
+      "description": "Run the test suite.",
+      "command": "deno test -A --check --permit-no-files --reload --doc --junit-path=\"./reports/report.xml\""
+    }
+  },
+  "compilerOptions": {
+    "allowJs": false,
+    "lib": [
+      "deno.ns",
+      "deno.window",
+      "deno.worker",
+      "decorators",
+      "esnext"
+    ]
+  },
+  "test": {
+    "include": [
+      "./src/**/*.test.ts"
+    ]
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "camelcase",
+        "default-param-last",
+        "eqeqeq",
+        "explicit-function-return-type",
+        "explicit-module-boundary-types",
+        "guard-for-in",
+        "no-eval",
+        "no-sparse-arrays",
+        "prefer-ascii"
+      ],
+      "exclude": [
+        "no-inferrable-types"
+      ]
+    }
+  },
+  "fmt": {
+    "semiColons": true,
+    "singleQuote": true,
+    "trailingCommas": "never",
+    "lineWidth": 120,
+    "typeLiteral.separatorKind": "comma",
+    "useBraces": "always"
+  }
+}

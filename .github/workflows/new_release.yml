@@ -1,0 +1,28 @@
+name: 'New release'
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version for new release.'
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: 'Draft new release (${{inputs.version}})'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Setup Repository (${{github.event.repository.name}})'
+        uses: actions/checkout@v4
+      
+      - name: 'Create new release (${{inputs.version}})'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: false
+          makeLatest: true
+          tag: ${{inputs.version}}
