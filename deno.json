@@ -15,8 +15,12 @@
       "command": "deno run -A --check --watch ./src/index.ts"
     },
     "lint": {
-      "description": "Run the linting tool.",
+      "description": "Run linter.",
       "command": "deno lint"
+    },
+    "format": {
+      "description": "Run formatter.",
+      "command": "deno lint --fix"
     },
     "test": {
       "description": "Run the test suite.",
@@ -24,7 +28,6 @@
     }
   },
   "compilerOptions": {
-    "allowJs": false,
     "lib": [
       "deno.ns",
       "deno.window",
@@ -37,6 +40,11 @@
     ]
   },
   "lint": {
+    "plugins": [
+      "jsr:@loat-dev/lint-plugins@0.3.6/colon_spacing",
+      "jsr:@loat-dev/lint-plugins@0.3.6/imports",
+      "jsr:@loat-dev/lint-plugins@0.3.6/arrays"
+    ],
     "rules": {
       "tags": [
         "recommended"
