@@ -4,7 +4,7 @@
   "license": "./LICENSE",
   "exports": {
     ".": "./src/index.ts"
-  }
+  },
   "tasks": {
     "run": {
       "description": "Run the main application.",
