@@ -1,6 +1,10 @@
 {
-  "name": "@denoplayground/template",
+  "name": "@loat-dev/docker-api",
   "version": "0.1.0",
+  "license": "./LICENSE",
+  "exports": {
+    ".": "./src/index.ts"
+  }
   "tasks": {
     "run": {
       "description": "Run the main application.",
