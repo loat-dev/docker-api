@@ -28,9 +28,7 @@
     "lib": [
       "deno.ns",
       "deno.window",
-      "deno.worker",
-      "decorators",
-      "esnext"
+      "deno.worker"
     ]
   },
   "test": {
