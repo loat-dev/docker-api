@@ -1,6 +1,6 @@
 import { Method } from './method.ts';
 
-export interface SocketInitOptions {
+export interface SocketRequestInit {
   method? : Method,
   headers : Record<string, string>
 }

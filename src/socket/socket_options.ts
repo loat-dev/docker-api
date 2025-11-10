@@ -1,3 +1,3 @@
 export interface SocketOptions {
-  connect : typeof Deno.connect
+  connect? : (options : Deno.UnixConnectOptions) => Promise<Deno.UnixConn>
 }
