@@ -1,4 +1,6 @@
+import { Method } from './method.ts';
+
 export interface SocketInitOptions {
-  method? : 'GET' | 'PUT' | 'POST',
+  method? : Method,
   headers : Record<string, string>
 }

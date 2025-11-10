@@ -49,7 +49,7 @@ export class Socket {
           return;
         }
 
-        const text = new TextDecoder().decode(value, { stream: true });
+        const text = new TextDecoder().decode(value, {stream: true});
         leftover += text;
 
         if (!headerParsed) {
