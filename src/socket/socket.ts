@@ -86,7 +86,10 @@ export class Socket {
     };
   }
 
-  private decodeChunkedBody(bodyStart : string, reader : ReadableStreamDefaultReader<Uint8Array>) : ReadableStream<Uint8Array> {
+  private decodeChunkedBody(
+    bodyStart : string,
+    reader : ReadableStreamDefaultReader<Uint8Array>
+  ) : ReadableStream<Uint8Array> {
     let buffer = bodyStart;
 
     return new ReadableStream<Uint8Array>({
@@ -153,7 +156,6 @@ export class Socket {
     let buffer = '';
     let parsedResponse : ParsedResponse | null = null;
 
-    // Ersten Chunk lesen und Header parsen
     const firstChunk = await reader.read();
     if (firstChunk.done) {
       throw new Error("Connection closed before receiving response");
@@ -174,10 +176,8 @@ export class Socket {
     let bodyStream : ReadableStream<Uint8Array>;
 
     if (isChunked) {
-      // Dekodiere Chunked Body
       bodyStream = this.decodeChunkedBody(parsedResponse.bodyStart, reader);
     } else {
-      // Normaler Body-Stream
       bodyStream = new ReadableStream<Uint8Array>({
         start(controller) : void {
           if (parsedResponse!.bodyStart) {
