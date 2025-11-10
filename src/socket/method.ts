@@ -14,6 +14,6 @@ export const method = [
 ] as const;
 
 /**
- * This type represents possible methods
+ * This type represents possible methods.
  */
 export type Method = typeof method[number];
