@@ -41,9 +41,8 @@
   },
   "lint": {
     "plugins": [
-      "jsr:@loat-dev/lint-plugins@0.3.6/colon_spacing",
-      "jsr:@loat-dev/lint-plugins@0.3.6/imports",
-      "jsr:@loat-dev/lint-plugins@0.3.6/arrays"
+      "jsr:@loat-dev/lint-plugins@0.3.12/imports",
+      "jsr:@loat-dev/lint-plugins@0.3.12/arrays"
     ],
     "rules": {
       "tags": [
@@ -72,5 +71,8 @@
     "lineWidth": 120,
     "typeLiteral.separatorKind": "comma",
     "useBraces": "always"
+  },
+  "imports": {
+    "@typescriptplayground/socket": "jsr:@typescriptplayground/socket@^0.1.2"
   }
 }

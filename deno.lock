@@ -5,7 +5,8 @@
     "jsr:@loat-dev/lint-plugins@0.3.3": "0.3.3",
     "jsr:@loat-dev/lint-plugins@0.3.4": "0.3.4",
     "jsr:@loat-dev/lint-plugins@0.3.5": "0.3.5",
-    "jsr:@loat-dev/lint-plugins@0.3.6": "0.3.6"
+    "jsr:@loat-dev/lint-plugins@0.3.6": "0.3.6",
+    "jsr:@typescriptplayground/socket@~0.1.2": "0.1.2"
   },
   "jsr": {
     "@loat-dev/lint-plugins@0.3.2": {
@@ -22,6 +23,14 @@
     },
     "@loat-dev/lint-plugins@0.3.6": {
       "integrity": "73434b50656dc99dc6dd5500c515557a6bf0085a2b61c59f44b213e2ce508fce"
+    },
+    "@typescriptplayground/socket@0.1.2": {
+      "integrity": "148b2058eb6beb81e1ef0a3fd2545f34a7f11774932f4f50677da169186771aa"
     }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@typescriptplayground/socket@~0.1.2"
+    ]
   }
 }
