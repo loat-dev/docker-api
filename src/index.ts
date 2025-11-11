@@ -1,7 +1,5 @@
-import { Socket } from '@typescriptplayground/socket';
+import { Docker } from './docker.ts';
 
-const socket = new Socket('/var/run/docker.sock');
+const docker = new Docker()
 
-socket.request("/containers/json")
-  .then(res => res.json())
-  .then(json => console.log(json));
+docker.containers.list().then(containers => {containers.map(container => console.log(container.Image))})
